@@ -1,3 +1,7 @@
+# Device
+# NOTE: Change me to your device path if it differs.
+DEV_PORT 		= /dev/ttyUSB0
+
 # Compiler
 CC 				= arm-none-eabi-gcc
 LD 				= arm-none-eabi-ld
@@ -44,8 +48,7 @@ CFLAGS 			+= $(INCLUDE_FLAGS)
 OUTPUT_BIN 		= $(BUILD_DIR)/output.bin
 OUTPUT_S19 		= $(BUILD_DIR)/output.s19
 
-# TODO: Replace with actual flashing command
-UPLOAD_COMMAND 	= echo "Not implemented yet..."
+UPLOAD_COMMAND 	= python upload.py
 
 
 # Build rules
@@ -62,7 +65,7 @@ $(BUILD_DIR)/%.o: %.c $(INCLUDES)
 	@$(CC) $(CFLAGS) -c -o $@ $<
 
 upload: $(OUTPUT_S19)
-	$(UPLOAD_COMMAND)
+	$(UPLOAD_COMMAND) $(DEV_PORT) $(OUTPUT_S19)
 
 s19: $(OUTPUT_S19) 
 
