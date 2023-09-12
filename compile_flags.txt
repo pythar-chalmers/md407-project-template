@@ -1,0 +1,16 @@
+-O0 
+-Wall 
+-Wextra 
+-Wpedantic 
+-mthumb 
+-lgcc 
+-lc_nano 
+-mno-unaligned-access 
+-nostartfiles 
+-g 
+-I 
+include
+-I
+include/cmsis 
+-I
+include/perip
