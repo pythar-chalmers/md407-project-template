@@ -1,55 +1,48 @@
-# Device
-# NOTE: Change me to your device path if it differs.
-DEV_PORT 		= /dev/ttyUSB0
+# Include the Makefile.project to get the sources
+include Makefile.project
 
-# Compiler
+# Device
+# NOTE: Change these if they differ
+DEV_PORT 		= /dev/ttyUSB0
+GDB_SERVER_PORT = 1234
+
+# Compiler & commands
 CC 				= arm-none-eabi-gcc
 LD 				= arm-none-eabi-ld
 OBJCOPY 		= arm-none-eabi-objcopy
+UPLOAD 			= python upload.py
+GDB			 = arm-none-eabi-gdb
 
 # Directories
-SRC_DIR 		= src
-DRIVERS_DIR 	= drivers
 INCLUDE_DIR 	= include
 
 # Build destination directory
 BUILD_DIR 		= build
 
-# Source files
-DRIVER_SRCS 	= $(wildcard $(DRIVERS_DIR)/**/*.c)
+# Includes
 INCLUDES 		= $(wildcard $(INCLUDE_DIR)/**/*.h)
-SRC_SRCS 		= $(wildcard $(SRC_DIR)/*.c)
+
+# Compiler & linker flags
+CFLAGS 			= -mthumb -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -O0 -Wall -Wextra -Wpedantic -std=c99 -g
+CFLAGS 			+= -I /usr/arm-none-eabi/include
+CFLAGS 		  	+= -ffreestanding -nostdlib
+CFLAGS 			+= -L /usr/include/newlib/c++/9.2.1/arm-none-eabi/thumb/v6-m/nofp 
+CFLAGS 			+= -L /usr/lib/arm-none-eabi/newlib/thumb/v6-m/nofp 
+CFLAGS 			+= -L /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp 
+
+INCLUDE_DIRS 	= $(wildcard $(INCLUDE_DIR)/*)
+INCLUDE_FLAGS 	= $(foreach dir,$(INCLUDE_DIRS),-I$(dir))
+CFLAGS 		   += $(INCLUDE_FLAGS)
+
+LDFLAGS		= -Tmd407-ram.x 
+# LDFLAGS		+= -L /path/to/your/libraries
 
 # Object files
-DRIVER_OBJS 	= $(patsubst %.c,$(BUILD_DIR)/%.o,$(DRIVER_SRCS))
-MAIN_OBJS 		= $(patsubst %.c,$(BUILD_DIR)/%.o,$(SRC_SRCS))
-
-# Compiler flags
-CFLAGS 			= 	-O0 -Wall -Wextra -Wpedantic -mthumb -march=armv6-m 			\
-					-lgcc -lc_nano -Tmd407-ram.x 									\
-					-L /usr/include/newlib/c++/9.2.1/arm-none-eabi/thumb/v6-m/nofp 	\
-					-L /usr/lib/arm-none-eabi/newlib/thumb/v6-m/nofp 				\
-					-L /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp 			\
-					-mno-unaligned-access -mfloat-abi=soft -std=c99 				\
-					-nostartfiles -I$(INCLUDE_DIR) 									\
-					-g 																\
-					-D SIMULATOR
-
-# List of include directories
-INCLUDE_DIRS 	= $(wildcard $(INCLUDE_DIR)/*)
-
-# Generate -I flags
-INCLUDE_FLAGS 	= $(foreach dir,$(INCLUDE_DIRS),-I$(dir))
-
-# Append the generated include flags to CFLAGS
-CFLAGS 			+= $(INCLUDE_FLAGS)
+OBJS 		= $(patsubst %.c,$(BUILD_DIR)/%.o,$(SOURCES))
 
 # Output files
 OUTPUT_BIN 		= $(BUILD_DIR)/output.bin
 OUTPUT_S19 		= $(BUILD_DIR)/output.s19
-
-UPLOAD_COMMAND 	= python upload.py
-
 
 # Build rules
 all: $(OUTPUT_S19)
@@ -57,7 +50,7 @@ all: $(OUTPUT_S19)
 $(OUTPUT_S19): $(OUTPUT_BIN)
 	@$(OBJCOPY) -I binary -O srec $< $@
 
-$(OUTPUT_BIN): $(MAIN_OBJS) $(DRIVER_OBJS)
+$(OUTPUT_BIN): $(OBJS)
 	@$(LD) $(LDFLAGS) -o $@ $^
 
 $(BUILD_DIR)/%.o: %.c $(INCLUDES)
@@ -65,11 +58,14 @@ $(BUILD_DIR)/%.o: %.c $(INCLUDES)
 	@$(CC) $(CFLAGS) -c -o $@ $<
 
 upload: $(OUTPUT_S19)
-	$(UPLOAD_COMMAND) $(DEV_PORT) $(OUTPUT_S19)
+	$(UPLOAD) $(DEV_PORT) $(OUTPUT_S19)
 
 s19: $(OUTPUT_S19) 
 
 bin: $(OUTPUT_BIN)
+
+gdb: $(OUTPUT_BIN)
+ $(GDB) -ex "target extended-remote :$(GDB_SERVER_PORT)" -ex "load" -ex "layout split" -ex "file $(OUTPUT_BIN)"
 
 clean:
 	@rm -rf $(BUILD_DIR)
@@ -79,4 +75,3 @@ clean:
 -include $(DRIVER_OBJS:.o=.d)
 
 .PHONY: all clean upload s19 bin
-

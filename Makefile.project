@@ -1,0 +1,65 @@
+
+#  ____                                
+# / ___|  ___  _   _ _ __ ___ ___  ___ 
+# \___ \ / _ \| | | | '__/ __/ _ \/ __|
+#  ___) | (_) | |_| | | | (_|  __/\__ \
+# |____/ \___/ \__,_|_|  \___\___||___/
+
+# Append your sources here. Like so:
+# SOURCES += src/example.c
+# Or:
+# SOURCES += $(wildcard src/**/*.c)
+
+SOURCES = src/main.c
+
+#  ____ _____ __  __ _________    ____       _                    
+# / ___|_   _|  \/  |___ /___ \  |  _ \ _ __(_)_   _____ _ __ ___ 
+# \___ \ | | | |\/| | |_ \ __) | | | | | '__| \ \ / / _ \ '__/ __|
+#  ___) || | | |  | |___) / __/  | |_| | |  | |\ V /  __/ |  \__ \
+# |____/ |_| |_|  |_|____/_____| |____/|_|  |_| \_/ \___|_|  |___/
+#
+#  NOTE: (Un)comment those you (don't) need.
+
+# SOURCES += drivers/perip/misc.c
+SOURCES += drivers/perip/stm32f4xx_can.c
+SOURCES += drivers/perip/stm32f4xx_rcc.c
+# SOURCES += drivers/perip/stm32f4xx_crc.c
+# SOURCES += drivers/perip/stm32f4xx_adc.c
+# SOURCES += drivers/perip/stm32f4xx_cec.c
+# SOURCES += drivers/perip/stm32f4xx_cryp_aes.c
+# SOURCES += drivers/perip/stm32f4xx_cryp.c
+# SOURCES += drivers/perip/stm32f4xx_cryp_des.c
+# SOURCES += drivers/perip/stm32f4xx_cryp_tdes.c
+# SOURCES += drivers/perip/stm32f4xx_dac.c
+# SOURCES += drivers/perip/stm32f4xx_dbgmcu.c
+# SOURCES += drivers/perip/stm32f4xx_dcmi.c
+# SOURCES += drivers/perip/stm32f4xx_dfsdm.c
+# SOURCES += drivers/perip/stm32f4xx_dma2d.c
+# SOURCES += drivers/perip/stm32f4xx_dma.c
+# SOURCES += drivers/perip/stm32f4xx_dsi.c
+# SOURCES += drivers/perip/stm32f4xx_exti.c
+# SOURCES += drivers/perip/stm32f4xx_flash.c
+# SOURCES += drivers/perip/stm32f4xx_flash_ramfunc.c
+# SOURCES += drivers/perip/stm32f4xx_fmpi2c.c
+# SOURCES += drivers/perip/stm32f4xx_fsmc.c
+# SOURCES += drivers/perip/stm32f4xx_gpio.c
+# SOURCES += drivers/perip/stm32f4xx_hash.c
+# SOURCES += drivers/perip/stm32f4xx_hash_md5.c
+# SOURCES += drivers/perip/stm32f4xx_hash_sha1.c
+# SOURCES += drivers/perip/stm32f4xx_i2c.c
+# SOURCES += drivers/perip/stm32f4xx_iwdg.c
+# SOURCES += drivers/perip/stm32f4xx_lptim.c
+# SOURCES += drivers/perip/stm32f4xx_ltdc.c
+# SOURCES += drivers/perip/stm32f4xx_pwr.c
+# SOURCES += drivers/perip/stm32f4xx_qspi.c
+# SOURCES += drivers/perip/stm32f4xx_rng.c
+# SOURCES += drivers/perip/stm32f4xx_rtc.c
+# SOURCES += drivers/perip/stm32f4xx_sai.c
+# SOURCES += drivers/perip/stm32f4xx_sdio.c
+# SOURCES += drivers/perip/stm32f4xx_spdifrx.c
+# SOURCES += drivers/perip/stm32f4xx_spi.c
+# SOURCES += drivers/perip/stm32f4xx_syscfg.c
+# SOURCES += drivers/perip/stm32f4xx_tim.c
+# SOURCES += drivers/perip/stm32f4xx_usart.c
+# SOURCES += drivers/perip/stm32f4xx_wwdg.c
+# SOURCES += drivers/perip/stm32f4xx_fmc.c 

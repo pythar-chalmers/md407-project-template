@@ -1,9 +1,8 @@
-#include <stdbool.h>
+// #include <stdbool.h>
 
-// Test include a random file
-#include "perip/misc.h"
+#define true 1
 
-int main() {
+int main(void) {
 	while (true)
 		;
 
