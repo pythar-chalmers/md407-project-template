@@ -1,5 +1,13 @@
 # MD407 Firmware Template
 This is intended to be a template for MD407 embedded projects. Please submit a **PR** if you encounter a bug or just want a feature to be added.
+### OBS: WIP, it works but there might be "bugs"
+
+## Setup
+**All of your configuration and settings are in [`Makefile.project`](/Makefile.project)**.
+
+There you will need to add **all of your sources (`.c` files)** and **uncomment the drivers you need**.
+
+**Why?!**: Because this is embedded and we can not afford bloatware (looking at you, Windows users...).
 
 ## Building 
 To build your project simply do `$ make`. It should output a `build/` directory with `output.s19` and `output.elf` in it.
@@ -51,4 +59,9 @@ end)
 ```
 You can also refer [**to my dotfiles**](https://github.com/almqv/dotfiles). 
 
-### OBS: WIP
+## License
+Read [`LICENSE`](/LICENSE) for more details.
+
+## Authors
+* [Elias Almqvist](https://github.com/almqv)
+
