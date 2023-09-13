@@ -1,16 +1,54 @@
 # MD407 Firmware Template
+This is intended to be a template for MD407 embedded projects. Please submit a **PR** if you encounter a bug or just want a feature to be added.
 
-## Usage & Building 
-`$ make` to build. Take a look at the [`Makefile`](/Makefile) for other commands.
+## Building 
+To build your project simply do `$ make`.
 
-When building, it will create a `build/` directory containing the raw bytes of the program and a `.s19` version of that.
+### Uploading to hardware
+`make upload` will run the [`upload.py`](/upload.py) script. Take a look at it.
 
-## Uploading to the MD407
-You can use `$ make upload` to upload the .s19. Check out the [`upload.py`](/upload.py) python script if you want to change anything.
+### GDB & Simserver
+Make sure you have started simserver before you do anything.
 
-## IDE
-It is recommended to use the `clang` extension for linting and such if you use vscode or neovim. 
+Then do: `$ make clean && make && arm-none-eabi-gdb` (or just `$ arm-none-eabi-gdb`)
 
-As long as your LSP parses the Makefile (ideally via `compile_flags.txt`). 
+You can also just do `$ make gdb` and it will launch & compile everything for you.
+
+## Development Environment
+
+### VSCode
+It is recommended to use the `clang` + `Makefile` extensions for linting and such if you use vscode.
+
+`LLVM` extension is also kinda nice.
+
+### (Neo)Vim
+Same as the above. I use `null-ls` and `lsp-zero`. 
+```lua
+return require("packer").startup(function(use)
+	use {
+		"VonHeikemen/lsp-zero.nvim",
+		branch = "v2.x",
+		requires = {
+			-- LSP Support
+			{ "neovim/nvim-lspconfig" }, -- Required
+			{
+				-- Optional
+				"williamboman/mason.nvim",
+				run = function()
+					pcall(vim.cmd, "MasonUpdate")
+				end,
+			},
+			{ "williamboman/mason-lspconfig.nvim" }, -- Optional
+
+			-- Autocompletion
+			{ "hrsh7th/nvim-cmp" }, -- Required
+			{ "hrsh7th/cmp-nvim-lsp" }, -- Required
+			{ "L3MON4D3/LuaSnip" }, -- Required
+		}
+	}
+	use "jose-elias-alvarez/null-ls.nvim"
+end)
+```
+You can also refer [**to my dotfiles**](https://github.com/almqv/dotfiles). 
 
 ### OBS: WIP

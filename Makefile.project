@@ -1,3 +1,14 @@
+#  ____       _   _   _                 
+# / ___|  ___| |_| |_(_)_ __   __ _ ___ 
+# \___ \ / _ \ __| __| | '_ \ / _` / __|
+#  ___) |  __/ |_| |_| | | | | (_| \__ \
+# |____/ \___|\__|\__|_|_| |_|\__, |___/
+#                             |___/     
+
+# NOTE: Change these if they differ
+DEV_PORT 		= /dev/ttyUSB0
+GDB_SERVER_PORT = 1234
+
 
 #  ____                                
 # / ___|  ___  _   _ _ __ ___ ___  ___ 
@@ -5,12 +16,16 @@
 #  ___) | (_) | |_| | | | (_|  __/\__ \
 # |____/ \___/ \__,_|_|  \___\___||___/
 
+# THESE ARE NEEDED:
+SOURCES = src/startup.c
+SOURCES += src/main.c
+
 # Append your sources here. Like so:
 # SOURCES += src/example.c
 # Or:
 # SOURCES += $(wildcard src/**/*.c)
+# If you're lazy and want to waste memory.
 
-SOURCES = src/main.c
 
 #  ____ _____ __  __ _________    ____       _                    
 # / ___|_   _|  \/  |___ /___ \  |  _ \ _ __(_)_   _____ _ __ ___ 
@@ -20,9 +35,13 @@ SOURCES = src/main.c
 #
 #  NOTE: (Un)comment those you (don't) need.
 
+# Misc (idk what it does but might be needed)
 # SOURCES += drivers/perip/misc.c
-SOURCES += drivers/perip/stm32f4xx_can.c
-SOURCES += drivers/perip/stm32f4xx_rcc.c
+
+# CAN
+# SOURCES += drivers/perip/stm32f4xx_can.c
+# SOURCES += drivers/perip/stm32f4xx_rcc.c
+
 # SOURCES += drivers/perip/stm32f4xx_crc.c
 # SOURCES += drivers/perip/stm32f4xx_adc.c
 # SOURCES += drivers/perip/stm32f4xx_cec.c

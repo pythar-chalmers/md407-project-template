@@ -1,11 +1,6 @@
 # Include the Makefile.project to get the sources
 include Makefile.project
 
-# Device
-# NOTE: Change these if they differ
-DEV_PORT 		= /dev/ttyUSB0
-GDB_SERVER_PORT = 1234
-
 # Compiler & commands
 CC 				= arm-none-eabi-gcc
 LD 				= arm-none-eabi-ld
@@ -65,7 +60,7 @@ s19: $(OUTPUT_S19)
 bin: $(OUTPUT_BIN)
 
 gdb: $(OUTPUT_BIN)
- $(GDB) -ex "target extended-remote :$(GDB_SERVER_PORT)" -ex "load" -ex "layout split" -ex "file $(OUTPUT_BIN)"
+	$(GDB)
 
 clean:
 	@rm -rf $(BUILD_DIR)
