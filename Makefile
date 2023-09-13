@@ -6,7 +6,7 @@ CC 				= arm-none-eabi-gcc
 LD 				= arm-none-eabi-ld
 OBJCOPY 		= arm-none-eabi-objcopy
 UPLOAD 			= python upload.py
-GDB			 = arm-none-eabi-gdb
+GDB			 	= arm-none-eabi-gdb
 
 # Directories
 INCLUDE_DIR 	= include
@@ -29,14 +29,13 @@ INCLUDE_DIRS 	= $(wildcard $(INCLUDE_DIR)/*)
 INCLUDE_FLAGS 	= $(foreach dir,$(INCLUDE_DIRS),-I$(dir))
 CFLAGS 		   += $(INCLUDE_FLAGS)
 
-LDFLAGS		= -Tmd407-ram.x 
-# LDFLAGS		+= -L /path/to/your/libraries
+LDFLAGS			= -Tmd407-ram.x 
 
 # Object files
 OBJS 		= $(patsubst %.c,$(BUILD_DIR)/%.o,$(SOURCES))
 
 # Output files
-OUTPUT_BIN 		= $(BUILD_DIR)/output.bin
+OUTPUT_BIN 		= $(BUILD_DIR)/output.elf
 OUTPUT_S19 		= $(BUILD_DIR)/output.s19
 
 # Build rules

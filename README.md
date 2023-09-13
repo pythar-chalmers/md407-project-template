@@ -2,7 +2,7 @@
 This is intended to be a template for MD407 embedded projects. Please submit a **PR** if you encounter a bug or just want a feature to be added.
 
 ## Building 
-To build your project simply do `$ make`.
+To build your project simply do `$ make`. It should output a `build/` directory with `output.s19` and `output.elf` in it.
 
 ### Uploading to hardware
 `make upload` will run the [`upload.py`](/upload.py) script. Take a look at it.
