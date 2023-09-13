@@ -60,7 +60,7 @@ end)
 You can also refer [**to my dotfiles**](https://github.com/almqv/dotfiles). 
 
 ## License
-Read [`LICENSE.md`](/LICENSE.md) for more details.
+Read [`LICENSE`](/LICENSE) for more details.
 
 ## Authors
 * [Elias Almqvist](https://github.com/almqv)
