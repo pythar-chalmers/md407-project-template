@@ -1,5 +1,5 @@
-# Include the sources from Makefile.project
-include(Makefile.project)
+cmake_minimum_required(VERSION 3.0)
+project(md407)  
 
 # Set Compiler & commands
 set(CC arm-none-eabi-gcc)
@@ -25,8 +25,15 @@ list(APPEND CMAKE_C_FLAGS " -L /usr/lib/arm-none-eabi/newlib/thumb/v6-m/nofp")
 list(APPEND CMAKE_C_FLAGS " -L /usr/lib/gcc/arm-none-eabi/9.2.1/thumb/v6-m/nofp")
 
 # Source files
-file(GLOB SOURCES "src/*.c")
-list(APPEND SOURCES "drivers/perip/stm32f4xx_rcc.c" "drivers/perip/stm32f4xx_gpio.c")
+file(GLOB SOURCES 
+	"src/**/*.c" 
+	"src/*.c"
+)
+list(APPEND SOURCES 
+	"drivers/perip/stm32f4xx_rcc.c" 
+	"drivers/perip/stm32f4xx_gpio.c"
+)
+
 
 # Object files
 foreach(source ${SOURCES})
