@@ -1,4 +1,4 @@
-file build/output.elf
+file output.elf
 target extended-remote localhost:1234
 load
 monitor restart
