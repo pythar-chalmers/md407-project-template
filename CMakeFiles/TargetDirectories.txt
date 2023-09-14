@@ -1,0 +1,3 @@
+/home/elal/Projects/school/cth/courses/datproj/template/CMakeFiles/template.dir
+/home/elal/Projects/school/cth/courses/datproj/template/CMakeFiles/edit_cache.dir
+/home/elal/Projects/school/cth/courses/datproj/template/CMakeFiles/rebuild_cache.dir

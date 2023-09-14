@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-include(../projects.cmake)
+include(projects.cmake)
 
 setup()
 
@@ -29,8 +29,8 @@ get_src_paths()
 # Add library source files here
 target_sources(${CMAKE_PROJECT_NAME}
     PUBLIC
-        ${LIB_SRC}/debug.cpp
-        ${LIB_SRC}/can.cpp
+        # ${LIB_SRC}/debug.cpp
+        # ${LIB_SRC}/can.cpp
 
         ${HAL_SRC}/stm32f4xx_gpio.c
         ${HAL_SRC}/stm32f4xx_rcc.c

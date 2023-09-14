@@ -1,0 +1,44 @@
+[
+{
+  "directory": "/home/elal/Projects/school/cth/courses/datproj/template",
+  "command": "/usr/bin/cc  -I/home/elal/Projects/school/cth/courses/datproj/template/include -I/home/elal/Projects/school/cth/courses/datproj/template/include/perip -I/home/elal/Projects/school/cth/courses/datproj/template/include/cmsis -I/home/elal/Projects/school/cth/courses/datproj/template/include/src -mthumb -g -O0 -mcpu=cortex-M4 -mno-unaligned-access -mfloat-abi=soft -nostdlib -fno-exceptions -o CMakeFiles/template.dir/src/main.c.o -c /home/elal/Projects/school/cth/courses/datproj/template/src/main.c",
+  "file": "/home/elal/Projects/school/cth/courses/datproj/template/src/main.c",
+  "output": "CMakeFiles/template.dir/src/main.c.o"
+},
+{
+  "directory": "/home/elal/Projects/school/cth/courses/datproj/template",
+  "command": "/usr/bin/cc  -I/home/elal/Projects/school/cth/courses/datproj/template/include -I/home/elal/Projects/school/cth/courses/datproj/template/include/perip -I/home/elal/Projects/school/cth/courses/datproj/template/include/cmsis -I/home/elal/Projects/school/cth/courses/datproj/template/include/src -mthumb -g -O0 -mcpu=cortex-M4 -mno-unaligned-access -mfloat-abi=soft -nostdlib -fno-exceptions -o CMakeFiles/template.dir/startup.s.o -c /home/elal/Projects/school/cth/courses/datproj/template/startup.s",
+  "file": "/home/elal/Projects/school/cth/courses/datproj/template/startup.s",
+  "output": "CMakeFiles/template.dir/startup.s.o"
+},
+{
+  "directory": "/home/elal/Projects/school/cth/courses/datproj/template",
+  "command": "/usr/bin/cc  -I/home/elal/Projects/school/cth/courses/datproj/template/include -I/home/elal/Projects/school/cth/courses/datproj/template/include/perip -I/home/elal/Projects/school/cth/courses/datproj/template/include/cmsis -I/home/elal/Projects/school/cth/courses/datproj/template/include/src -mthumb -g -O0 -mcpu=cortex-M4 -mno-unaligned-access -mfloat-abi=soft -nostdlib -fno-exceptions -o CMakeFiles/template.dir/lib/src/startup.c.o -c /home/elal/Projects/school/cth/courses/datproj/template/lib/src/startup.c",
+  "file": "/home/elal/Projects/school/cth/courses/datproj/template/lib/src/startup.c",
+  "output": "CMakeFiles/template.dir/lib/src/startup.c.o"
+},
+{
+  "directory": "/home/elal/Projects/school/cth/courses/datproj/template",
+  "command": "/usr/bin/cc  -I/home/elal/Projects/school/cth/courses/datproj/template/include -I/home/elal/Projects/school/cth/courses/datproj/template/include/perip -I/home/elal/Projects/school/cth/courses/datproj/template/include/cmsis -I/home/elal/Projects/school/cth/courses/datproj/template/include/src -mthumb -g -O0 -mcpu=cortex-M4 -mno-unaligned-access -mfloat-abi=soft -nostdlib -fno-exceptions -o CMakeFiles/template.dir/drivers/perip/src/stm32f4xx_gpio.c.o -c /home/elal/Projects/school/cth/courses/datproj/template/drivers/perip/src/stm32f4xx_gpio.c",
+  "file": "/home/elal/Projects/school/cth/courses/datproj/template/drivers/perip/src/stm32f4xx_gpio.c",
+  "output": "CMakeFiles/template.dir/drivers/perip/src/stm32f4xx_gpio.c.o"
+},
+{
+  "directory": "/home/elal/Projects/school/cth/courses/datproj/template",
+  "command": "/usr/bin/cc  -I/home/elal/Projects/school/cth/courses/datproj/template/include -I/home/elal/Projects/school/cth/courses/datproj/template/include/perip -I/home/elal/Projects/school/cth/courses/datproj/template/include/cmsis -I/home/elal/Projects/school/cth/courses/datproj/template/include/src -mthumb -g -O0 -mcpu=cortex-M4 -mno-unaligned-access -mfloat-abi=soft -nostdlib -fno-exceptions -o CMakeFiles/template.dir/drivers/perip/src/stm32f4xx_rcc.c.o -c /home/elal/Projects/school/cth/courses/datproj/template/drivers/perip/src/stm32f4xx_rcc.c",
+  "file": "/home/elal/Projects/school/cth/courses/datproj/template/drivers/perip/src/stm32f4xx_rcc.c",
+  "output": "CMakeFiles/template.dir/drivers/perip/src/stm32f4xx_rcc.c.o"
+},
+{
+  "directory": "/home/elal/Projects/school/cth/courses/datproj/template",
+  "command": "/usr/bin/cc  -I/home/elal/Projects/school/cth/courses/datproj/template/include -I/home/elal/Projects/school/cth/courses/datproj/template/include/perip -I/home/elal/Projects/school/cth/courses/datproj/template/include/cmsis -I/home/elal/Projects/school/cth/courses/datproj/template/include/src -mthumb -g -O0 -mcpu=cortex-M4 -mno-unaligned-access -mfloat-abi=soft -nostdlib -fno-exceptions -o CMakeFiles/template.dir/drivers/perip/src/stm32f4xx_can.c.o -c /home/elal/Projects/school/cth/courses/datproj/template/drivers/perip/src/stm32f4xx_can.c",
+  "file": "/home/elal/Projects/school/cth/courses/datproj/template/drivers/perip/src/stm32f4xx_can.c",
+  "output": "CMakeFiles/template.dir/drivers/perip/src/stm32f4xx_can.c.o"
+},
+{
+  "directory": "/home/elal/Projects/school/cth/courses/datproj/template",
+  "command": "/usr/bin/cc  -I/home/elal/Projects/school/cth/courses/datproj/template/include -I/home/elal/Projects/school/cth/courses/datproj/template/include/perip -I/home/elal/Projects/school/cth/courses/datproj/template/include/cmsis -I/home/elal/Projects/school/cth/courses/datproj/template/include/src -mthumb -g -O0 -mcpu=cortex-M4 -mno-unaligned-access -mfloat-abi=soft -nostdlib -fno-exceptions -o CMakeFiles/template.dir/drivers/perip/src/misc.c.o -c /home/elal/Projects/school/cth/courses/datproj/template/drivers/perip/src/misc.c",
+  "file": "/home/elal/Projects/school/cth/courses/datproj/template/drivers/perip/src/misc.c",
+  "output": "CMakeFiles/template.dir/drivers/perip/src/misc.c.o"
+}
+]
