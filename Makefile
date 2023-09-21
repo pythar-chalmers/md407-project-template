@@ -26,6 +26,7 @@ INCLUDE_FLAGS 	= $(foreach dir,$(INCLUDE_DIRS),-I$(dir))
 # Compiler flags
 CC_FLAGS =   -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -lgcc -lc_nano -Tmd407-ram.x 
 CC_FLAGS +=  $(EXTRA_COMPILER_OPTIONS)
+CC_FLAGS +=  -specs=nano.specs -specs=nosys.specs 
 CC_FLAGS +=  -nostartfiles 
 CC_FLAGS +=  -L. 
 CC_FLAGS +=  -L drivers/perip  
